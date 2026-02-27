@@ -1,6 +1,6 @@
-FROM php:8.3-cli
+FROM php:8.4-cli
 
-# System dependencies + Postgres support
+# System deps + Postgres support
 RUN apt-get update && apt-get install -y \
     git unzip libpq-dev \
  && docker-php-ext-install pdo pdo_pgsql
@@ -10,10 +10,10 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www
 
-# Copy application
+# Copy app
 COPY . .
 
-# Install PHP dependencies
+# Install PHP deps
 RUN composer install --no-dev --optimize-autoloader
 
 # Render provides $PORT
