@@ -22,8 +22,7 @@ return [
 
     //'allowed_origins' => ['*'],
      'allowed_origins' => [
-        'https://n00243266.github.io',          // Allow CORS for the GitHub Pages domain
-        'http://localhost:3000',                // Allow CORS for local development
+        'https://n00243266.github.io',          // Allow CORS for the GitHub Pages domain development
     ],
 
     'allowed_origins_patterns' => [],

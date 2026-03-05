@@ -6,5 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Entry extends Model
 {
-     protected $fillable = ['title', 'body', 'image_url'];
+    protected $fillable = [
+        'title',
+        'body',
+        'image_url'
+    ];
+
+    // Fix Windows backslashes in image paths
+    public function getImageUrlAttribute($value)
+    {
+        return str_replace('\\', '/', $value);
+    }
 }
