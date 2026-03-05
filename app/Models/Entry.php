@@ -12,7 +12,6 @@ class Entry extends Model
         'image_url'
     ];
 
-    // Fix Windows backslashes in image paths
     public function getImageUrlAttribute($value)
     {
         return str_replace('\\', '/', $value);
